@@ -34,6 +34,7 @@ let server;
 // our server, since we'll be dealing with promises there.
 function runServer() {
   const port = process.env.PORT || 8080;
+  // using a promise as an extra layer of protection for our tests
   return new Promise((resolve, reject) => {
     server = app.listen(port, () => {
       console.log(`Your app is listening on port ${port}`);
